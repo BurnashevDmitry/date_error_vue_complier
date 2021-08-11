@@ -6,6 +6,23 @@
   <router-view />
 </template>
 
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+import CargoService, { Cargo } from './CargoService';
+export default defineComponent({
+  data() {
+    return {
+      cargo: new Cargo('first', 100),
+    };
+  },
+  methods: {
+    info() {
+      CargoService.info(this.cargo);
+    },
+  },
+});
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
